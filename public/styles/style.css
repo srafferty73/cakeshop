@@ -1,0 +1,13 @@
+body {
+  /* Location of the image */
+  background-image: url(/images/cake.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+
+  background-color: #464646;
+}
