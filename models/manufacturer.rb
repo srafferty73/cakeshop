@@ -9,8 +9,8 @@ class Manufacturer
     @id = options['id'].to_i if options['id']
     @name = options['name'] #greggs, baynes, stephens etc...
     @location = options['location'] # edinburgh, glasgow, dundee etc...
-    @delivery_fee = options['delivery_fee']
-    @minimum_order = options['minimum_order']
+    @delivery_fee = options['delivery_fee'].to_i
+    @minimum_order = options['minimum_order'].to_i
   end
 
   def save()
@@ -30,6 +30,11 @@ class Manufacturer
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM manufacturers"
+    SqlRunner.run(sql)
   end
 
 end

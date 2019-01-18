@@ -2,6 +2,9 @@ require_relative("../models/cake")
 require_relative("../models/manufacturer")
 require("pry-byebug")
 
+Cake.delete_all()
+Manufacturer.delete_all()
+
 #Always ensure that "buying_cost" < "selling_price" to ensure profit
 
 # ------ CAKES ------

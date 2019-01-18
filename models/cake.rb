@@ -9,9 +9,9 @@ class Cake
     @id = options['id'].to_i if options['id']
     @name = options['name'] #chocolate cake etc...
     @category = options['category'] # cupcake, birthday, wedding etc...
-    @quantity = options['quantity']
-    @buying_cost = options['buying_cost']
-    @selling_price = options['selling_price']
+    @quantity = options['quantity'].to_i
+    @buying_cost = options['buying_cost'].to_i
+    @selling_price = options['selling_price'].to_i
   end
 
   def save()
@@ -31,6 +31,11 @@ class Cake
     values = [@name, @category, @quantity, @buying_cost, @selling_price]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM cakes"
+    SqlRunner.run(sql)
   end
 
 end
