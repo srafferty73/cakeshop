@@ -1,4 +1,6 @@
 body {
+  font-family: 'Indie Flower', cursive;
+  color: white;
   /* Location of the image */
   background-image: url(/images/cake.jpg);
   background-position: center center;
@@ -8,6 +10,5 @@ body {
   /* This is what makes the background image rescale based
      on the container's size */
   background-size: cover;
-
   background-color: #464646;
 }
