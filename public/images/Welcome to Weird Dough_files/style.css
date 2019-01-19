@@ -1,5 +1,5 @@
 body {
-  font-family: 'Chivo', sans-serif;
+  font-family: 'Thasadith', sans-serif;
   color: white;
   /* Location of the image */
   background-image: url(/images/cake.jpg);
@@ -19,7 +19,6 @@ body {
 .col {
   flex: 1;
 }
-
 
 /* ============   FOOTER   ============== */
 

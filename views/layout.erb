@@ -3,20 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Welcome to Weird Dough</title>
-    <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chivo" rel="stylesheet">
     <link rel="icon" href="/images/cupcake.png">
-
+    <link rel="stylesheet" type="text/css" href="/styles/reset.css">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
   </head>
 
   <body>
-    <h1>WEIRD DOUGH</h1>
-    <nav>
+    <h1>WEIRD DOUGH INVENTORY</h1>
+    <nav><br>
       <ul>
+        <li>Select one of the options below: </li>
+        <br><br>
         <li><a href="/cake-inventory">All cakes in stock</a></li>
         <li><a href="/cake-orders/new">New cake order</a></li>
       </ul>
     </nav>
+    <br>
     <%= yield %>
     <br><br>
     <footer>&copy; CodeClan 2019</footer>
