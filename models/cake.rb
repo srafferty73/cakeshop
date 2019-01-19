@@ -33,6 +33,25 @@ class Cake
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE cakes
+    SET
+    (
+      name,
+      category,
+      quantity,
+      buying_cost,
+      selling_price,
+      manufacturer_id
+      ) =
+      (
+        $1, $2, $3, $4, $5, $6
+      )
+      WHERE id = $5"
+      values = [@name, @category, @quantity, @buying_cost, @selling_price, @manufacturer_id]
+      SqlRunner.run(sql, values)
+    end
+
   def self.all()
     sql = "SELECT * FROM cakes"
     cakes = SqlRunner.run( sql )

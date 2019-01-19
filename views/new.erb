@@ -1,0 +1,35 @@
+<br>
+
+<h1>Add New Cake</h1>
+
+
+
+<form action="/cake-orders" method="post">
+  <fieldset>
+    <legend><h2>Cake details: </h2></legend>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" placeholder="Name">
+<br>
+  <label for="category-select">Select a category:</label>
+  <select id="category-select" name="birthday">
+      <option value="birthday">Birthday</option>
+      <option value="celebration">Celebration</option>
+      <option value="wedding">Wedding</option>
+      <option value="cupcake">Cupcake</option>
+  </select>
+  <br>
+  <label for="quantity">Quantity:</label>
+  <input type="number" id="quantity" min="1" name="quantity" >
+  <br>
+  <label for="buying_cost">Buying buying_cost:</label>
+  <input type="number" id="buying_cost" min="1" name="buying_cost" >
+  <br>
+  <label for="selling_price">Selling price:</label>
+  <input type="number" id="selling_price" min="1" name="selling_price" >
+  <br>
+  <label for="last-name">Manufacturer:</label>
+  <input type="text" id="manufacturer" name="manufacturer" placeholder="Manufacturer">
+  <br><br>
+  <input type="submit" value="Add New Order">
+</form>
+</fieldset>

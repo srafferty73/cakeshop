@@ -19,7 +19,9 @@ get '/cake-inventory' do
 end
 
 # NEW
-
+get '/cake-orders/new' do
+  erb( :new )
+end
 
 # CREATE
 # SHOW
