@@ -1,1 +1,31 @@
-<h1>Weird Dough</h1>
+<h1>All the Cakes we have in stock</h1>
+
+<table class "centered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Buying cost</th>
+      <th>Selling price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>=========</td>
+      <td>=========</td>
+      <td>=========</td>
+      <td>=========</td>
+      <td>=========</td>
+    </tr>
+    <% for order in @orders %>
+    <tr>
+      <td><%= order.name %></td>
+      <td><%= order.category %></td>
+      <td><%= order.quantity %></td>
+      <td><%= order.buying_cost %></td>
+      <td><%= order.selling_price %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

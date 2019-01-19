@@ -12,3 +12,21 @@ body {
   background-size: cover;
   background-color: #464646;
 }
+
+.flex-grid {
+  display: flex;
+}
+.col {
+  flex: 1;
+}
+
+/* ============   FOOTER   ============== */
+
+footer {
+  display: flex;
+  justify-content: left;
+}
+
+.table > thead, tbody > tr > td {
+  text-align: center;
+}

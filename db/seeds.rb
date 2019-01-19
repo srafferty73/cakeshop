@@ -20,7 +20,7 @@ cake2 = Cake.new ({
 cake2.save()
 
 cake3 = Cake.new ({
-  "name" => "3-Tier", "category" => "wedding", "quantity" => 2,
+  "name" => "Three-Tier", "category" => "wedding", "quantity" => 2,
   "buying_cost" => 15, "selling_price" => 20})
 cake3.save()
 
