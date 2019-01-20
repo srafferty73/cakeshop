@@ -1,0 +1,30 @@
+<br><br>
+
+<h2>Manufacturers we currently use: </h2>
+<br>
+<table class="centered">
+  <colgroup>
+    <col style="background-color:gray">
+    <col span="5" >
+  </colgroup>
+  <thead class='bottom-border'>
+    <tr>
+      <th style="padding:0 5px 5px 5px;">ID</th>
+      <th style="padding:0 15px 5px 15px;">Name</th>
+      <th style="padding:0 15px 5px 15px;">Location</th>
+      <th style="padding:0 5px 5px 5px;">Delivery fee</th>
+      <th style="padding:0 5px 5px 5px;">Minimum order</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for bakery in @bakeries %>
+    <tr>
+      <td style="padding:0 5px 5px 5px;"><%= bakery.id %></td>
+      <td style="padding:0 15px 5px 15px;"><%= bakery.name.capitalize %></td>
+      <td style="padding:0 15px 5px 15px;"><%= bakery.location.capitalize %></td>
+      <td style="padding:0 5px 5px 5px;">£<%= bakery.delivery_fee %></td>
+      <td style="padding:0 5px 5px 5px;"><%= bakery.minimum_order %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

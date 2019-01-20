@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: white;
   /* Location of the image */
   background-image: url(/images/cake.jpg);
@@ -25,6 +25,11 @@ footer {
 .table > thead, tbody > tr > td {
   text-align: center;
   table-layout: fixed;
+
+}
+
+table {
+    border: 1px solid white;
 }
 
 table td:last-child {
@@ -35,8 +40,12 @@ table td:first-child {
     border-left: 1px solid;
 }
 
-table td {
+table td tr {
     border-style: double;
     border-bottom: 1px solid white;
     border-top: 1px solid white;
+}
+
+table th {
+    background-color: gray;
 }
