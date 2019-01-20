@@ -1,5 +1,5 @@
 body {
-  font-family: 'Chivo', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: white;
   /* Location of the image */
   background-image: url(/images/cake.jpg);
@@ -13,13 +13,7 @@ body {
   background-color: #464646;
 }
 
-.flex-grid {
-  display: flex;
-}
-.col {
-  flex: 1;
-}
-
+.bottom-border { border-bottom: double white; }
 
 /* ============   FOOTER   ============== */
 
@@ -30,4 +24,19 @@ footer {
 
 .table > thead, tbody > tr > td {
   text-align: center;
+  table-layout: fixed;
+}
+
+table td:last-child {
+    border-right: 1px solid;
+}
+
+table td:first-child {
+    border-left: 1px solid;
+}
+
+table td {
+    border-style: double;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
 }

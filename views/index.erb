@@ -1,32 +1,27 @@
 <br><br>
 
-<h2>Cakes in stock</h2>
+<h2>Cakes currently in stock</h2>
 <br>
-<table class "centered">
-  <thead>
+<table class="centered">
+  <thead class='bottom-border'>
     <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Quantity</th>
-      <th>Buying cost</th>
-      <th>Selling price</th>
+      <th style="padding:0 5px 0 5px;">ID</th>
+      <th style="padding:0 15px 0 15px;">Name</th>
+      <th style="padding:0 15px 0 15px;">Category</th>
+      <th style="padding:0 5px 0 5px;">Quantity</th>
+      <th style="padding:0 5px 0 5px;">Buying cost</th>
+      <th style="padding:0 5px 0 5px;">Selling price</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>==========</td>
-      <td>==========</td>
-      <td>==========</td>
-      <td>==========</td>
-      <td>==========</td>
-    </tr>
     <% for order in @orders %>
     <tr>
-      <td><%= order.name %></td>
-      <td><%= order.category %></td>
-      <td><%= order.quantity %></td>
-      <td><%= order.buying_cost %></td>
-      <td><%= order.selling_price %></td>
+      <td style="padding:0 5px 0 5px;"><%= order.id %></td>
+      <td style="padding:0 15px 0 15px;"><%= order.name.capitalize %></td>
+      <td style="padding:0 15px 0 15px;"><%= order.category.capitalize %></td>
+      <td style="padding:0 5px 0 5px;"><%= order.quantity %></td>
+      <td style="padding:0 5px 0 5px;"><%= order.buying_cost %></td>
+      <td style="padding:0 5px 0 5px;"><%= order.selling_price %></td>
     </tr>
     <% end %>
   </tbody>

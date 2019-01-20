@@ -3,7 +3,7 @@ require_relative( "../db/sql_runner" )
 class Manufacturer
 
   attr_reader :id
-  attr_accessor :name, :category, :quantity, :buying_cost, :selling_price
+  attr_accessor :name, :location, :delivery_fee, :minimum_order
 
   def initialize( options)
     @id = options['id'].to_i if options['id']
@@ -30,6 +30,13 @@ class Manufacturer
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM manufacturers"
+    bakeries = SqlRunner.run( sql )
+    result = bakeries.map { |bakery| Manufacturer.new( bakery ) }
+    return result
   end
 
   def self.delete_all()

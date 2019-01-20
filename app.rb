@@ -12,9 +12,10 @@ end
 
 # INDEX
 get '/cake-inventory' do
-  # Go to the database and retreive all the orders
-  @orders = Cake.all
-  # Display a list of all the orders
+  # Go to the database and retrieve all the orders & manufacturers
+    @bakeries = Manufacturer.all
+    @orders = Cake.all
+  # Display a list of all the orders and manufacturers
   erb( :index )
 end
 
@@ -24,6 +25,15 @@ get '/cake-orders/new' do
 end
 
 # CREATE
+
+post '/cake-orders' do
+  # Create a new Cake object
+  Cake.new( params ).save
+  # Save it to the DB
+  # Redirect the browser to '/cake-inventory'
+  redirect to '/cake-inventory'
+end
+
 # SHOW
 # EDIT
 # UPDATE

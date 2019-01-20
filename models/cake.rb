@@ -42,13 +42,12 @@ class Cake
       quantity,
       buying_cost,
       selling_price,
-      manufacturer_id
       ) =
       (
-        $1, $2, $3, $4, $5, $6
+        $1, $2, $3, $4, $5
       )
-      WHERE id = $5"
-      values = [@name, @category, @quantity, @buying_cost, @selling_price, @manufacturer_id]
+      WHERE id = $6"
+      values = [@name, @category, @quantity, @buying_cost, @selling_price]
       SqlRunner.run(sql, values)
     end
 

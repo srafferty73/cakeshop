@@ -10,27 +10,27 @@ Manufacturer.delete_all()
 # ------ CAKES ------
 
 cake1 = Cake.new ({
-  "name" => "CHOCOLATE", "category" => "birthday",
+  "name" => "chocolate", "category" => "birthday",
   "quantity" => 3, "buying_cost" => 5, "selling_price" => 7})
 cake1.save()
 
 cake2 = Cake.new ({
-  "name" => "GATEAU", "category" => "celebration", "quantity" => 1,
+  "name" => "gateau", "category" => "celebration", "quantity" => 1,
   "buying_cost" => 7, "selling_price" => 10})
 cake2.save()
 
 cake3 = Cake.new ({
-  "name" => "THREE-TIER", "category" => "wedding", "quantity" => 2,
+  "name" => "three-tier", "category" => "wedding", "quantity" => 2,
   "buying_cost" => 15, "selling_price" => 20})
 cake3.save()
 
 cake4 = Cake.new ({
-  "name" => "BUTTERBEER", "category" => "cupcake", "quantity" => 5,
+  "name" => "butterbeer", "category" => "cupcake", "quantity" => 5,
   "buying_cost" => 2, "selling_price" => 3})
 cake4.save()
 
 cake5 = Cake.new ({
-  "name" => "RED VELVET", "category" => "birthday", "quantity" => 2,
+  "name" => "red velvet", "category" => "birthday", "quantity" => 2,
   "buying_cost" => 7, "selling_price" => 11})
 cake5.save()
 
