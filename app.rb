@@ -50,14 +50,13 @@ get '/cake-orders/delete-cake' do
   erb( :delete)
 end
 
-post '/cake-orders/delete-cake' do
-  delete()
-  redirect to '/cake-inventory'
-end
+# post '/cake-orders/delete-cake' do
+#   delete()
+#   redirect to '/cake-inventory'
+# end
 
-def delete()
-  sql = "DELETE FROM cakes
-  WHERE id = $1"
-  values = [@id]
-  SqlRunner.run( sql, values )
+post '/cake-orders/delete-cake' do
+  cake = Cake.find(params['id'].to_i)
+  cake.delete
+  redirect to '/cake-inventory'
 end

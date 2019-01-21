@@ -3,7 +3,7 @@ require_relative( "../db/sql_runner" )
 class Cake
 
   attr_reader :id
-  attr_accessor :name, :category, :quantity, :buying_cost, :selling_price
+  attr_accessor :name, :category, :quantity, :buying_cost, :selling_price, :manufacturer_id
 
   def initialize( options)
     @id = options['id'].to_i if options['id']
@@ -12,6 +12,12 @@ class Cake
     @quantity = options['quantity'].to_i
     @buying_cost = options['buying_cost'].to_i
     @selling_price = options['selling_price'].to_i
+    @manufacturer_id = options['manufacturer_id'].to_i
+  end
+
+  def house()
+    manufacturer = Manufacturer.find(@manufacturer_id)
+    return manufacturer
   end
 
   def save()
@@ -21,14 +27,15 @@ class Cake
       category,
       quantity,
       buying_cost,
-      selling_price
+      selling_price,
+      manufacturer_id
     )
     VALUES
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
     RETURNING id"
-    values = [@name, @category, @quantity, @buying_cost, @selling_price]
+    values = [@name, @category, @quantity, @buying_cost, @selling_price, @manufacturer_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -42,25 +49,47 @@ class Cake
       quantity,
       buying_cost,
       selling_price,
+      manufacturer_id
       ) =
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
       )
-      WHERE id = $6"
-      values = [@name, @category, @quantity, @buying_cost, @selling_price]
+      WHERE id = $7"
+      values = [@name, @category, @quantity, @buying_cost, @selling_price, @manufacturer_id]
       SqlRunner.run(sql, values)
     end
 
   def self.all()
-    sql = "SELECT * FROM cakes"
+    sql = "
+      SELECT * FROM cakes
+      ORDER BY id ASC"
     cakes = SqlRunner.run( sql )
     result = cakes.map { |cake| Cake.new( cake ) }
     return result
   end
 
   def self.delete_all()
-    sql = "DELETE FROM cakes"
+    sql = "
+      DELETE FROM cakes"
     SqlRunner.run(sql)
+  end
+
+  def delete()
+    sql = "
+      DELETE FROM cakes
+      WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
+  def self.find(id)
+    sql = "
+      SELECT * FROM cakes
+      WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    cake = Cake.new(result)
+    return cake
   end
 
 end

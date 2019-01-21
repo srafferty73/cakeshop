@@ -26,8 +26,10 @@
       <td style="padding:0 5px 5px 5px;"><%= order.quantity %></td>
       <td style="padding:0 5px 5px 5px;">£<%= order.buying_cost %></td>
       <td style="padding:0 5px 5px 5px;">£<%= order.selling_price %></td>
+      <td style="padding:0 5px 5px 5px;"><%= order.manufacturer_id %></td>
+
+      <td class="<% if order.quantity <= 1 %> order-low <% else %> order-ok <% end %>">stock level</td>
     </tr>
     <% end %>
   </tbody>
-  </fieldset>
 </table>

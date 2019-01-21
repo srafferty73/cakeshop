@@ -44,4 +44,14 @@ class Manufacturer
     SqlRunner.run(sql)
   end
 
+  def self.find(id)
+    sql = "
+      SELECT * FROM manufacturers
+      WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    manufacturer = Manufacturer.new(result)
+    return manufacturer
+  end
+
 end
