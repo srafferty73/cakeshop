@@ -12,9 +12,11 @@
 
   <body>
     <h1>WEIRD DOUGH</h1>
-    <br><br>
-    <p><h2>CAKE INVENTORY WEBSITE</h2></p>
     <br>
+    <p><h2>CAKE INVENTORY WEBSITE</h2></p>
+    <p><span style="background-color: orange">ORANGE</span> = LOW STOCK</p><br>
+    <p><span style="background-color: red">RED</span> = OUT OF STOCK</p>
+
 
     <%= yield %>
 
@@ -22,7 +24,7 @@
     <nav><br>
       <ul>
         <li>Select one of the options below: </li>
-        <br><br>
+        <br>
         <li><a href="/cake-inventory">All cakes in stock</a></li>
         <br>
         <li><a href="/cake-orders/show-bakeries">Display Bakeries used</a></li>

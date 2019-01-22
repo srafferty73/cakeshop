@@ -15,8 +15,13 @@ class Cake
     @manufacturer_id = options['manufacturer_id'].to_i
   end
 
-  def house()
-    manufacturer = Manufacturer.find(@manufacturer_id)
+  def manufacturer()
+    sql = "SELECT * FROM manufacturers
+    WHERE id = $1"
+    values = [@manufacturer_id]
+    results = SqlRunner.run(sql, values)
+    manufacturer_hash = results[0]
+    manufacturer = Manufacturer.new(manufacturer_hash)
     return manufacturer
   end
 
@@ -34,7 +39,7 @@ class Cake
     (
       $1, $2, $3, $4, $5, $6
     )
-    RETURNING id"
+    RETURNING *"
     values = [@name, @category, @quantity, @buying_cost, @selling_price, @manufacturer_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i

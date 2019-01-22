@@ -25,7 +25,6 @@ footer {
 .table > thead, tbody > tr > td {
   text-align: center;
   table-layout: fixed;
-
 }
 
 table {
@@ -48,4 +47,23 @@ table td tr {
 
 table th {
     background-color: gray;
+
+}
+
+.small-cell {
+  padding:0 5px 5px 5px;
+}
+
+.large-cell {
+  padding:0 15px 5px 15px;
+}
+
+.order-low {
+  padding:0 5px 5px 5px;
+  background-color: orange;
+}
+
+.order-none {
+  padding:0 5px 5px 5px;
+  background-color: red;
 }
