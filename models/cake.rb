@@ -42,7 +42,8 @@ class Cake
     RETURNING *"
     values = [@name, @category, @quantity, @buying_cost, @selling_price, @manufacturer_id]
     results = SqlRunner.run(sql, values)
-    @id = results.first()['id'].to_i
+    id = results.first()['id'].to_i
+    @id = id
   end
 
   def update()
