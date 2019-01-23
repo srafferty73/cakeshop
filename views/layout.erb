@@ -19,21 +19,28 @@
       <span style="background-color: red">RED</span> = OUT OF STOCK
     </p>
     <br>
+    <hr align="left" width="50.5%">
 
     <%= yield %>
 
-    <br><br>
-    <nav><br>
+    <br><br><br><br>
+    <hr align="left" width="50.5%">
+    <nav>
       <ul>
-        <li>Select one of the options below: </li><br>
-        <li><a href="/cake-inventory">All cakes in stock</a></li><br>
-        <li><a href="/cake-inventory-filter">Filter stock by manufacturer</a></li><br>
-        <li><a href="/cake-orders/show-bakeries">Display Bakeries used</a></li><br>
-        <li><a href="/cake-orders/new">New cake order</a></li><br>
-        <li><a href="/cake-orders/delete-cake">Delete cake order</a></li>
+        <li><h2>Select one of the options below:</h2></li><br>
+        <li>
+          <button class="button"><a href="/cake-inventory">Display all cakes</a></button>&nbsp;&nbsp;
+          <button class="button"><a href="/cake-orders/new">New cake order</a></button>&nbsp;&nbsp;
+          <button class="button"><a href="/cake-orders/delete-cake">Delete cake order</a></button>
+        </li><br>
+        <li>
+          <button class="button"><a href="/cake-orders/show-bakeries">Show all Manufacturers</a></button>&nbsp;&nbsp;
+          <button class="button"><a href="/cake-inventory-filter">Filter by a Manufacturer</a></button>
+        </li><br>
+        <hr align="left" width="50.5%">
       </ul>
     </nav>
-    <br><br>
+    <br>
     <footer>&copy; CodeClan 2019</footer>
   </body>
 </html>
