@@ -1,30 +1,38 @@
-<br><br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Manufacturer Index</title>
+  </head>
+  <body>
+    <br><br>
 
-<h2>Manufacturers we currently use: </h2>
-<br>
-<table class="centered">
-  <colgroup>
-    <col style="background-color:gray">
-    <col span="5" >
-  </colgroup>
-  <thead class='bottom-border'>
-    <tr>
-      <th class="small-cell">ID</th>
-      <th class="large-cell">Name</th>
-      <th class="large-cell">Location</th>
-      <th class="small-cell">Manager name</th>
-      <th class="small-cell">Minimum order</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% for bakery in @bakeries %>
-      <tr>
-        <td class="small-cell"><%= bakery.id %></td>
-        <td class="large-cell"><%= bakery.name.capitalize %></td>
-        <td class="large-cell"><%= bakery.location.capitalize %></td>
-        <td class="small-cell"><%= bakery.manager_name %></td>
-        <td class="small-cell"><%= bakery.minimum_order %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <h2>Manufacturers we currently use: </h2>
+    <br>
+    <table class="centered">
+      <colgroup>
+        <col style="background-color:gray">
+        <col span="4" >
+      </colgroup>
+      <thead class='bottom-border'>
+        <tr>
+          <th class="small-cell">ID</th>
+          <th class="large-cell">Name</th>
+          <th class="large-cell">Location</th>
+          <th class="small-cell">Manager name</th>
+          <th class="small-cell">Minimum order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for bakery in @bakeries %>
+          <tr>
+            <td class="small-cell"><%= bakery.id %></td>
+            <td class="large-cell"><%= bakery.name.capitalize %></td>
+            <td class="large-cell"><%= bakery.location.capitalize %></td>
+            <td class="small-cell"><%= bakery.manager_name %></td>
+            <td class="small-cell"><%= bakery.minimum_order %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </body>
+</html>

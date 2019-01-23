@@ -19,26 +19,27 @@
       <span style="background-color: red">RED</span> = OUT OF STOCK
     </p>
     <br>
-    <hr align="left" width="50.5%">
+    <hr>
 
     <%= yield %>
 
     <br><br><br><br>
-    <hr align="left" width="50.5%">
+    <hr>
     <nav>
-      <ul>
-        <li><h2>Select one of the options below:</h2></li><br>
-        <li>
-          <button class="button"><a href="/cake-inventory">Display all cakes</a></button>&nbsp;&nbsp;
-          <button class="button"><a href="/cake-orders/new">New cake order</a></button>&nbsp;&nbsp;
-          <button class="button"><a href="/cake-orders/delete-cake">Delete cake order</a></button>
-        </li><br>
-        <li>
-          <button class="button"><a href="/cake-orders/show-bakeries">Show all Manufacturers</a></button>&nbsp;&nbsp;
-          <button class="button"><a href="/cake-inventory-filter">Filter by a Manufacturer</a></button>
-        </li><br>
-        <hr align="left" width="50.5%">
-      </ul>
+        <h2>Select one of the options below:</h2><br>
+      <p>
+        <button class="button"><a href="/cake-inventory">Display all cakes</a></button>&nbsp;&nbsp;
+        <button class="button"><a href="/cake-orders/new">New cake order</a></button><br><br>
+        <button class="button"><a href="/cake-orders/:id/edit-cake">Edit a cake order</a></button>&nbsp;&nbsp;
+        <button class="button"><a href="/cake-orders/delete-cake">Delete cake order</a></button>
+        <br><br>
+      </p>
+      <p>
+        <button class="button"><a href="/cake-orders/show-bakeries">Show all Manufacturers</a></button>&nbsp;&nbsp;
+        <button class="button"><a href="/cake-inventory-filter">Filter by a Manufacturer</a></button>
+        <br>
+      </p>
+      <hr>
     </nav>
     <br>
     <footer>&copy; CodeClan 2019</footer>

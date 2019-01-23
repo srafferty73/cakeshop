@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Cake Details</title>
+  </head>
+  <body>
+    <form action="/cake-orders/edit-cake"<%= @order.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+
+      <label for="name-field">Name:</label>
+        <input
+          type="text"
+          name="name"
+          id="name-field"
+          value="<%= @order.name %>"
+        />
+
+      <label for="category-selection">Category:</label>
+        <select name="category" id="category-selection">
+          <option
+            value="birthday"<%= "selected"
+            if @order.category == "birthday" %>>Birthday
+          </option>
+          <option
+            value="celebration"<%= "selected"
+            if @order.category == "celebration" %>>Celebration
+          </option>
+          <option
+            value="wedding"<%= "selected"
+            if @order.category == "wedding" %>>Wedding
+          </option>
+          <option
+            value="cupcake"<%= "selected"
+            if @order.category == "cupcake" %>>Cupcake
+          </option>
+        </select>
+
+      <label for="quantity-field">Quantity:</label>
+        <input
+          type="number"
+          name="quantity"
+          id="quantity-field"
+          value="<%= @order.quantity() %>"
+        />
+
+      <label for="buying-cost-field">Buying cost:</label>
+        <input
+          type="number"
+          name="buying_cost"
+          id="buying-cost-field"
+          value="<%= @order.buying_cost() %>"
+        />
+
+      <label for="selling-price-field">Selling price:</label>
+        <input
+          type="number"
+          name="selling_price"
+          id="selling-price-field"
+          value="<%= @order.selling_price() %>"
+        />
+
+      <input type='submit' value="Edit Order">
+    </form>
+  </body>
+</html>

@@ -20,6 +20,22 @@ body {
   table-layout: fixed;
 }
 
+.form-el {
+  margin: 10px 0;
+}
+
+.form-wrapper .form-el input[type="submit" i] {
+  margin-left: 180px;
+}
+
+.form-wrapper .form-el label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 160px;
+  margin: 0 1em 0 0;
+}
+
 table {
     border: 1px solid white;
 }
@@ -66,6 +82,7 @@ table th {
   background-color: red;
 }
 
+
 .button {
   display: inline-block;
   padding: 5px 15px;
@@ -81,12 +98,16 @@ table th {
   box-shadow: 0 4px #999;
 }
 
-.button:hover {background-color: silver}
+.button:hover {background-color: black; color: white;}
 
 .button:active {
-  background-color: #3e8e41;
+  background-color: black;
   box-shadow: 0 2px #666;
   transform: translateY(2px);
+}
+
+hr {
+  width:50.5%;text-align:left;margin-left:0;
 }
 
 /* ============   FOOTER   ============== */

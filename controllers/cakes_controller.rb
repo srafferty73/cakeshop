@@ -5,30 +5,12 @@ require_relative("../models/cake")
 
 also_reload( '../models/*' )
 
-
-
 # INDEX
 get '/cake-inventory' do
   # Go to the database and retrieve all the orders
     @orders = Cake.all
   # Display a list of all the orders
   erb( :index )
-end
-
-# FILTER
-get '/cake-inventory-filter' do
-  # Go to the database and retrieve all the orders
-    @orders = Cake.filter
-  # Display a list of all the orders
-  erb( :filter )
-end
-
-# MANUFACTURER INDEX
-get '/cake-orders/show-bakeries' do
-  # Go to the database and retrieve all the manufacturers
-    @bakeries = Manufacturer.all
-  # Display a list of all the manufacturers
-  erb( :manufacturer_index )
 end
 
 # NEW
@@ -49,17 +31,23 @@ end
 
 # SHOW
 # EDIT
+
+get '/cake-orders/:id/edit-cake' do
+  @order = Cake.find( params[:id] )
+  erb( :edit )
+end
+
 # UPDATE
+put '/cake-orders/:id' do # update
+  Cake.new( params ).update
+  redirect to '/cake-inventory'
+end
+
 # DELETE
 
 get '/cake-orders/delete-cake' do
   erb( :delete)
 end
-
-# post '/cake-orders/delete-cake' do
-#   delete()
-#   redirect to '/cake-inventory'
-# end
 
 post '/cake-orders/delete-cake' do
   cake = Cake.find(params['id'].to_i)

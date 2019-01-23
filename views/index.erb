@@ -1,42 +1,49 @@
-<br>
-
-<h2>Cakes currently in stock:</h2>
-<br>
-<table class="centered">
-  <colgroup>
-    <col style="background-color:gray">
-    <col span="5">
-  </colgroup>
-  <thead class='bottom-border'>
-    <tr>
-      <th class="small-cell">ID</th>
-      <th class="large-cell">Name</th>
-      <th class="large-cell">Category</th>
-      <th class="small-cell">Quantity</th>
-      <th class="small-cell">Buying cost</th>
-      <th class="small-cell">Selling price</th>
-      <th class="small-cell">Bakery</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% for order in @orders %>
-    <tr>
-      <td class="small-cell"><%= order.id %></td>
-      <td class="large-cell"><%= order.name.capitalize %></td>
-      <td class="large-cell"><%= order.category.capitalize %></td>
-      <td <% if order.quantity == 1 %>
-              class = "order-low small-cell"
-          <% elsif order.quantity == 0 %>
-              class = "order-none small-cell"
-          <% else %>
-              class = "order-ok small-cell"
-          <% end %>>
-          <%= order.quantity %>
-      </td>
-      <td class="small-cell">£<%= order.buying_cost %></td>
-      <td class="small-cell">£<%= order.selling_price %></td>
-      <td class="small-cell"><%= order.manufacturer.name %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cakes Index</title>
+  </head>
+  <body>
+    <br>
+    <h2>Cakes currently in stock:</h2>
+    <br>
+    <table class="centered">
+      <colgroup>
+        <col style="background-color:gray">
+        <col span="6">
+      </colgroup>
+      <thead class='bottom-border'>
+        <tr>
+          <th class="small-cell">ID</th>
+          <th class="large-cell">Name</th>
+          <th class="large-cell">Category</th>
+          <th class="small-cell">Quantity</th>
+          <th class="small-cell">Buying cost</th>
+          <th class="small-cell">Selling price</th>
+          <th class="small-cell">Bakery</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for order in @orders %>
+        <tr>
+          <td class="small-cell"><%= order.id %></td>
+          <td class="large-cell"><%= order.name.capitalize %></td>
+          <td class="large-cell"><%= order.category.capitalize %></td>
+          <td <% if order.quantity == 1 %>
+                  class = "order-low small-cell"
+              <% elsif order.quantity == 0 %>
+                  class = "order-none small-cell"
+              <% else %>
+                  class = "order-ok small-cell"
+              <% end %>>
+              <%= order.quantity %>
+          </td>
+          <td class="small-cell">£<%= order.buying_cost %></td>
+          <td class="small-cell">£<%= order.selling_price %></td>
+          <td class="small-cell"><%= order.manufacturer.name %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </body>
+</html>
