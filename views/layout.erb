@@ -13,31 +13,27 @@
   <body>
     <h1>WEIRD DOUGH</h1>
     <br>
-    <p><h2>CAKE INVENTORY WEBSITE</h2></p>
-    <p><span style="background-color: orange">ORANGE</span> = LOW STOCK</p><br>
-    <p><span style="background-color: red">RED</span> = OUT OF STOCK</p>
-
+    <p>
+      <span style="background-color: green">GREEN</span> = IN STOCK&nbsp;&nbsp;
+      <span style="background-color: orange">ORANGE</span> = LOW STOCK&nbsp;&nbsp;
+      <span style="background-color: red">RED</span> = OUT OF STOCK
+    </p>
+    <br>
 
     <%= yield %>
 
     <br><br>
     <nav><br>
       <ul>
-        <li>Select one of the options below: </li>
-        <br>
-        <li><a href="/cake-inventory">All cakes in stock</a></li>
-        <br>
-        <li><a href="/cake-inventory-filter">Filter stock by manufacturer</a></li>
-        <br>
-        <li><a href="/cake-orders/show-bakeries">Display Bakeries used</a></li>
-        <br>
-        <li><a href="/cake-orders/new">New cake order</a></li>
-        <br>
+        <li>Select one of the options below: </li><br>
+        <li><a href="/cake-inventory">All cakes in stock</a></li><br>
+        <li><a href="/cake-inventory-filter">Filter stock by manufacturer</a></li><br>
+        <li><a href="/cake-orders/show-bakeries">Display Bakeries used</a></li><br>
+        <li><a href="/cake-orders/new">New cake order</a></li><br>
         <li><a href="/cake-orders/delete-cake">Delete cake order</a></li>
       </ul>
     </nav>
-    <br>
+    <br><br>
     <footer>&copy; CodeClan 2019</footer>
   </body>
-  </html>
 </html>

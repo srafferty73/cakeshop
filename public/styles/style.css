@@ -15,13 +15,6 @@ body {
 
 .bottom-border { border-bottom: double white; }
 
-/* ============   FOOTER   ============== */
-
-footer {
-  display: flex;
-  justify-content: left;
-}
-
 .table > thead, tbody > tr > td {
   text-align: center;
   table-layout: fixed;
@@ -71,4 +64,11 @@ table th {
 .order-none {
   padding:0 5px 5px 5px;
   background-color: red;
+}
+
+/* ============   FOOTER   ============== */
+
+footer {
+  display: flex;
+  justify-content: left;
 }

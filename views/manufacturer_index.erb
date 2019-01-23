@@ -18,13 +18,13 @@
   </thead>
   <tbody>
     <% for bakery in @bakeries %>
-    <tr>
-      <td class="small-cell"><%= bakery.id %></td>
-      <td class="large-cell"><%= bakery.name.capitalize %></td>
-      <td class="large-cell"><%= bakery.location.capitalize %></td>
-      <td class="small-cell">£<%= bakery.delivery_fee %></td>
-      <td class="small-cell"><%= bakery.minimum_order %></td>
-    </tr>
+      <tr>
+        <td class="small-cell"><%= bakery.id %></td>
+        <td class="large-cell"><%= bakery.name.capitalize %></td>
+        <td class="large-cell"><%= bakery.location.capitalize %></td>
+        <td class="small-cell">£<%= bakery.delivery_fee %></td>
+        <td class="small-cell"><%= bakery.minimum_order %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

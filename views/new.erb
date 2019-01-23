@@ -32,13 +32,12 @@
     <p>
       <label for="manufacturer-select">Select a Manufacturer:</label>
       <select id="manufacturer-select" name="manufacturer_id">
-          <option value="manufacturer_id">Earthquake Cakes</option>
-          <option value="manufacturer_id">Reekin' Pecans</option>
-          <option value="manufacturer_id">Flustered Custard</option>
-          <option value="manufacturer_id">Sugar Boogers</option>
+          <% @manufacturers.each do |manufacturer| %>
+            <option value=<%= manufacturer.id %>><%= manufacturer.name.capitalize %></option>
+          <% end %>
       </select>
     </p>
-  <br>
-  <input type="submit" value="Add New Order">
+    <br>
+    <input type="submit" value="Add New Order">
+  </fieldset>
 </form>
-</fieldset>

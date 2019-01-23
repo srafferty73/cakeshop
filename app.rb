@@ -18,10 +18,10 @@ get '/cake-inventory' do
   erb( :index )
 end
 
-# INDEX
+# FILTER
 get '/cake-inventory-filter' do
   # Go to the database and retrieve all the orders
-    @orders = Cake.all
+    @orders = Cake.filter
   # Display a list of all the orders
   erb( :filter )
 end
@@ -36,6 +36,7 @@ end
 
 # NEW
 get '/cake-orders/new' do
+  @manufacturers = Manufacturer.all
   erb( :new )
 end
 
