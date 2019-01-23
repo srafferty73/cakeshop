@@ -9,22 +9,22 @@ Manufacturer.delete_all()
 
 manufacturer1 = Manufacturer.new({
   "name" => "Earthquake Cakes", "location" => "dundee",
-  "delivery_fee" => 20, "minimum_order" => 5})
+  "manager_name" => "Fat Bob", "minimum_order" => 5})
 manufacturer1.save()
 
 manufacturer2 = Manufacturer.new({
   "name" => "Reekin' Pecans ", "location" => "glasgow",
-  "delivery_fee" => 17, "minimum_order" => 6})
+  "manager_name" => "Greedy Ed", "minimum_order" => 6})
 manufacturer2.save()
 
 manufacturer3 = Manufacturer.new({
   "name" => "Flustered Custard", "location" => "edinburgh",
-  "delivery_fee" => 12, "minimum_order" => 3})
+  "manager_name" => "Bobby Donut", "minimum_order" => 3})
 manufacturer3.save()
 
 manufacturer4 = Manufacturer.new({
   "name" => "Sugar Boogers", "location" => "edinburgh",
-  "delivery_fee" => 14, "minimum_order" => 2})
+  "manager_name" => "Jenny Eclair", "minimum_order" => 2})
 manufacturer4.save()
 
 

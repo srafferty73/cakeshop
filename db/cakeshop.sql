@@ -5,7 +5,7 @@ CREATE TABLE manufacturers (
   ID SERIAL8 PRIMARY KEY,
   name VARCHAR(255) not null,
   location VARCHAR(255),
-  delivery_fee INT2,
+  manager_name VARCHAR(255),
   minimum_order INT2
 );
 

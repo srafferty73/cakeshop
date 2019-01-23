@@ -12,7 +12,7 @@
       <th class="small-cell">ID</th>
       <th class="large-cell">Name</th>
       <th class="large-cell">Location</th>
-      <th class="small-cell">Delivery fee</th>
+      <th class="small-cell">Manager name</th>
       <th class="small-cell">Minimum order</th>
     </tr>
   </thead>
@@ -22,7 +22,7 @@
         <td class="small-cell"><%= bakery.id %></td>
         <td class="large-cell"><%= bakery.name.capitalize %></td>
         <td class="large-cell"><%= bakery.location.capitalize %></td>
-        <td class="small-cell">£<%= bakery.delivery_fee %></td>
+        <td class="small-cell"><%= bakery.manager_name %></td>
         <td class="small-cell"><%= bakery.minimum_order %></td>
       </tr>
     <% end %>
