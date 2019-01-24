@@ -21,7 +21,7 @@ get '/cake-orders/show-bakeries' do
   erb( :manufacturer_index )
 end
 
-post '/cake-orders/show-bakeries' do
-  Manufacturer.new( params ).save
-  redirect to '/cake-orders/show-bakeries'
-end
+# post '/cake-orders/show-bakeries' do
+#   Manufacturer.new( params ).save
+#   redirect to '/cake-orders/show-bakeries'
+# end

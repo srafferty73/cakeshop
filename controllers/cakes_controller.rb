@@ -8,7 +8,12 @@ also_reload( '../models/*' )
 # INDEX
 get '/cake-inventory' do
   # Go to the database and retrieve all the orders
-    @orders = Cake.all
+
+    if params.keys.include?("manufacturer_id")
+      @orders = Cake.filter
+    else
+      @orders = Cake.all
+    end
   # Display a list of all the orders
   erb( :index )
 end

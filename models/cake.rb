@@ -74,6 +74,17 @@ class Cake
     return result
   end
 
+  def self.filter()
+    sql = "
+      SELECT * FROM cakes
+      WHERE $1 = manufacturers.id
+      ORDER BY id ASC"
+      values = [@manufacturer_id]
+    cakes = SqlRunner.run( sql )
+    result = cakes.map { |cake| Cake.new( cake ) }
+    return result
+  end
+
   def self.delete_all()
     sql = "
       DELETE FROM cakes"
