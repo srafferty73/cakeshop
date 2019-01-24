@@ -8,7 +8,7 @@ also_reload( '../models/*' )
 # FILTER
 get '/cake-inventory-filter' do
   # Go to the database and retrieve all the orders
-    @orders = Cake.filter
+    @manufacturers = Manufacturer.all
   # Display a list of all the orders
   erb( :filter )
 end
@@ -19,4 +19,9 @@ get '/cake-orders/show-bakeries' do
     @bakeries = Manufacturer.all
   # Display a list of all the manufacturers
   erb( :manufacturer_index )
+end
+
+post '/cake-orders/show-bakeries' do
+  Manufacturer.new( params ).save
+  redirect to '/cake-orders/show-bakeries'
 end
